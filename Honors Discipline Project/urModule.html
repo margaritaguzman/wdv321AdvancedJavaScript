@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UR Module - Administrative View</title>
+    <link rel="stylesheet" href="urStyle.css" type="text/css">
+    <script src="Patient.js"></script>
+    <script src="urModule.js"></script>
+</head>
+
+<body>
+    <div class="container1">
+        <h1>Utilization Review Module</h1>
+        <img src="images/urModule.png" alt="medical office review">
+        <div class="centerText">
+            <!-- Display patient details -->
+            <p><strong>Name:</strong> <span id="patientName">N/A</span>
+                <strong>Member ID:</strong> <span id="patientMemberID">N/A</span>
+                <strong>Insurance:</strong> <span id="insuranceName">N/A</span>
+            </p>
+            <p><strong>SSN:</strong> <span id="patientSSN">N/A</span>
+                <strong>Date of Birth:</strong> <span id="patientDOB">N/A</span>
+                <strong>Phone:</strong> <span id="patientPhone">N/A</span>
+            </p>
+            <p><strong>Address:</strong> <span id="patientAddress">N/A</span>
+                <strong>City:</strong> <span id="patientCity">N/A</span>
+                <strong>State:</strong> <span id="patientState">N/A</span>
+                <strong>Zip Code:</strong> <span id="patientZip">N/A</span>
+            </p>
+            <p><strong>Treatment Type:</strong> <span id="treatmentType">N/A</span></p>
+            <p><strong>Levels of Care:</strong> <span id="levelsOfCare"></span></p>
+
+        </div>
+
+        <div class="authorization-details">
+            <h3>Authorization Details</h3>
+            <p><strong>Admit Date:</strong> <span id="admitDate"></span></p>
+            <p><strong>Treatment Type:</strong> <span id="treatmentTypeDisplay"></span></p>
+            <p><strong>Levels of Care:</strong> <span id="levelsOfCareDisplay"></span></p>
+
+            <div class="image-container">
+                <h4>Photo ID:</h4>
+                <img src="images/photoID.png" alt="state issued ID">
+
+                <h4>Insurance Card:</h4>
+                <img src="images/insuranceCard.png" alt="john doe card">
+            </div>
+
+            <div id="authRequestsContainer"></div>
+
+            <h4>Add Authorization Request</h4>
+            <textarea id="authorizationNotes" placeholder="Enter notes for the authorization request"></textarea><br>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate"><br>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate"><br>
+
+
+            <div class="button-container">
+            <button onclick="addAuthorizationRequest()">Add Request</button></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

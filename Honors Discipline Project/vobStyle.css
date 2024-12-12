@@ -1,0 +1,96 @@
+h1 {
+    text-align: center;
+}
+
+.container1 {
+    max-width: 100%;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.562);
+}
+.requestForm {
+    max-width: 1050px;
+    margin: auto;
+    background: #48b3e9a6;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.997);
+    text-align: center;
+}
+
+.requestForm img {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+  
+}
+
+.container1 label, .container1 input {
+    flex: 1 1 48%;
+    margin: 5px 0;
+}
+
+.container1 input[type="text"], .container1 input[type="date"], .container1 input[type="tel"] {
+   
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .container1 label, .container1 input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+    }
+   
+}
+
+.checkbox-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkbox-row label {
+    margin-right: 2px;
+    margin-left: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    display: block;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #5a6d77;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #056b33d1;
+}
+
+#submissionMessage {
+    max-width: 1050px;
+    margin: 20px auto;
+    background: #48b3e9a6;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.997);
+}
+

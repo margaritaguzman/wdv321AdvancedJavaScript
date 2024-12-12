@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOB Request</title>
+    <link href="vobStyle.css" rel="stylesheet" type="text/css">
+    <script src="Patient.js"></script>
+    <script src="vobModule.js" defer></script>
+</head>
+
+<body>
+    
+    <div class="requestForm">
+        <img src="images/vobRequest.png" alt="charting medical image">
+        <h1>VOB Request</h1>
+        <h2>Patient Insurance Information</h2>
+        <!-- Form for VOB Request -->
+        <form method="post" action="urModule.html" id="Form">
+            <div class="container1">
+                <p>
+                    <!-- Input fields for patient information -->
+                    <label for="patientsName">Patient's Name:</label>
+                    <input type="text" name="patientsName" id="patientsName" placeholder="Patient's Name">
+                    
+                    <label for="patientsMemberID">Member ID:</label>
+                    <input type="text" name="patientsMemberID" id="patientsMemberID" placeholder="ABC123">
+                    
+                    <label for="insuranceName">Insurance Name:</label>
+                    <select name="insuranceName" id="insuranceName">
+                        <option>Select Insurance</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </p>
+                <p>
+                    <!-- Additional patient details -->
+                    <label for="patientSSN">SSN:</label>
+                    <input type="text" name="patientSSN" id="patientSSN" placeholder="123-45-6789">
+                    
+                    <label for="patientDOB">DOB:</label>
+                    <input type="date" name="patientDOB" id="patientDOB" placeholder="01/01/1990">
+                    
+                    <label for="patientPhone">Phone Number:</label>
+                    <input type="tel" name="patientPhone" id="patientPhone" placeholder="515-123-4567">
+                </p>
+                <p>
+                    <!-- Patient address information -->
+                    <label for="patientAddress">Address:</label>
+                    <input type="text" name="patientAddress" id="patientAddress" placeholder="1234 Street">
+                    
+                    <label for="patientCity">City:</label>
+                    <input type="text" name="patientCity" id="patientCity" placeholder="City">
+                    
+                    <label for="patientState">State:</label>
+                    <select name="patientState" id="patientState">
+                        <option>Select State</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                    
+                    <label for="patientZip">ZipCode:</label>
+                    <input type="text" name="patientZip" id="patientZip" placeholder="12345">
+                </p>
+                <p>
+                    <!-- Treatment type selection -->
+                    <h4>Treatment Type:</h4>
+                    <label for="substanceAbuse">Substance Abuse:</label>
+                    <input type="radio" name="treatmentType" id="substanceAbuse" value="substanceAbuse">
+                    
+                    <label for="mentalHealth">Mental Health:</label>
+                    <input type="radio" name="treatmentType" id="mentalHealth" value="mentalHealth">
+                </p>
+                
+                <!-- Dynamic checkboxes for treatment levels based on selected treatment type -->
+                <div id="substanceAbuseLevels" class="checkbox-row" style="display: none;">
+                    <p class="checkbox-row">
+                        <label for="substanceLevelCare1">Detox</label>
+                        <input type="checkbox" name="levelCare" id="substanceLevelCare1" value="H0010">
+                        
+                        <label for="substanceLevelCare2">Residential</label>
+                        <input type="checkbox" name="levelCare" id="substanceLevelCare2" value="H0018">
+                        
+                        <label for="substanceLevelCare3">PHP</label>
+                        <input type="checkbox" name="levelCare" id="substanceLevelCare3" value="S0201">
+                        
+                        <label for="substanceLevelCare4">IOP</label>
+                        <input type="checkbox" name="levelCare" id="substanceLevelCare4" value="H0015">
+                        
+                        <label for="substanceLevelCare5">OP - Group</label>
+                        <input type="checkbox" name="levelCare" id="substanceLevelCare5" value="90853">
+                        
+                        <label for="substanceLevelCare6">OP - Individual</label>
+                        <input type="checkbox" name="levelCare" id="substanceLevelCare6" value="90834">
+                    </p>
+                </div>
+                
+                <div id="mentalHealthLevels" class="checkbox-row" style="display: none;">
+                    <p class="checkbox-row">
+                        <label for="mentalLevelCare1">Residential</label>
+                        <input type="checkbox" name="levelCare" id="mentalLevelCare1" value="H0018">
+                        
+                        <label for="mentalLevelCare2">PHP</label>
+                        <input type="checkbox" name="levelCare" id="mentalLevelCare2" value="H0035">
+                        
+                        <label for="mentalLevelCare3">IOP</label>
+                        <input type="checkbox" name="levelCare" id="mentalLevelCare3" value="S9480">
+                        
+                        <label for="mentalLevelCare5">OP - Group</label>
+                        <input type="checkbox" name="levelCare" id="mentalLevelCare5" value="90853">
+                        
+                        <label for="mentalLevelCare6">OP - Individual</label>
+                        <input type="checkbox" name="levelCare" id="mentalLevelCare6" value="90834">
+                    </p>
+                </div>
+                
+                <!-- File upload options -->
+                <p>
+                    <label for="photoID">Upload Patient's ID:</label>
+                    <input type="file" name="photoID" id="photoID">
+                    
+                    <label for="insuranceCard">Upload Patient's Insurance Card:</label>
+                    <input type="file" name="insuranceCard" id="insuranceCard">
+                </p>
+                
+                <!-- Submit button -->
+                <div class="button-container">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Container for submission message and additional buttons -->
+    <div id="submissionMessage" style="display: none; text-align: center;">
+        <h3>Submission Successful!</h3>
+        <p id="submittedData"></p>
+
+        <div id="estimateInfo" style="display: none;">
+            <h3>Estimate and Benefits Information:</h3>
+            <p id="estimate"></p>
+            <p id="benefits"></p>
+        </div>
+
+        <div class="action-buttons" style="margin-top: 20px;">
+            <button id="admitButton" style="display: none;">Admit</button>
+            <button id="declineButton" style="display: none;">Decline</button>
+        </div>
+    </div>
+</body>
+
+</html>
