@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/addRecipe.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="addRecipe.html">Add Recipe</a>
+          <a href="myRecipes.html">My Recipes</a>
+        </nav>
+    
+          <div id="search-bar">
+            <input type="text" id="search" placeholder="Search recipes...">
+            <button>Search</button>
+          </div>
+      </header>
+        <form id="add-recipe-form">
+            <div class="form-group">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" placeholder="Recipe Name">
+            </div>
+            <div class="form-group">
+                <label for="recipe-image">Image:</label>
+                <input type="text" id="recipe-image" placeholder="image.jpg">
+            </div>
+            <div class="form-group">
+                <label for="recipe-description">Description:</label>
+                <textarea id="recipe-description" placeholder="Brief Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cooking-time">Cooking/Prep Time (in minutes):</label>
+                <input type="number" id="cooking-time" placeholder="e.g., 30">
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+            <fieldset id="ingredients">
+                <legend>Ingredients</legend>
+                <button type="button" id="add-ingredient">Add Ingredient</button>
+            </fieldset>
+            <fieldset id="instructions">
+                <legend>Instructions</legend>
+                <button type="button" id="add-instruction">Add Instruction</button>
+            </fieldset>
+            <button type="submit">Save Recipe</button>
+        </form>
+
+
+    <!-- <div>
+        <h1>Recipe's</h1>
+    </div>
+    <form id="recipe-form">
+        <label>Recipe Name: <input type="text" id="title"></label>
+        <label>Image URL: <input type="text" id="image"></label>
+        <div id="ingredients">
+            <label>Ingredient: <input type="text" class="ingredient-name">
+                <input type="number" class="ingredient-quantity"> <input type="text" class="ingredient-unit"></label>
+        </div>
+        <button type="button" onclick="addIngredientField()">Add Ingredient</button>
+        <div id="instructions">
+            <label>Instruction: <input type="text" class="instruction-step"></label>
+        </div>
+        <button type="button" onclick="addInstructionField()">Add Instruction</button>
+        <button type="submit">Save Recipe</button>
+    </form> -->
+</body>
+
+</html>

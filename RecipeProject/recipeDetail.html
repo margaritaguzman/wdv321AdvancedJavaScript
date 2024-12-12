@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/recipeDetails.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="addRecipe.html">Add Recipe</a>
+          <a href="myRecipes.html">My Recipes</a>
+        </nav>
+    
+          <div id="search-bar">
+            <input type="text" id="search" placeholder="Search recipes...">
+            <button>Search</button>
+          </div>
+      </header>
+
+    <main>
+        <div class="recipe-card" id="recipe-cards">
+            <div id="recipe-detail">
+                <!-- Recipe details will be dynamically inserted here -->
+            </div>
+            <div class="additional-details">
+                <p id="prep-time">Preparation/Cooking Time: <span id="prep-time"></span> minutes</p>
+                <p id="difficulty">Difficulty: <span id="difficulty"></span></p>
+            </div>
+            <div class="controls">
+                <p id="servings-display">Original Servings: <span id="current-servings"></span></p>
+                <label for="servingsSelect">Adjust Servings:</label>
+                <select id="servingsSelect">
+                    <option value="1">Normal</option>
+                    <option value="0.5">Half</option>
+                    <option value="2">Double</option>
+                </select>
+            </div>
+            <button id="toggle-ingredients">Show Ingredients</button>
+            <ul id="ingredients-list" class="hidden"></ul>
+            <button id="toggle-instructions">Show Instructions</button>
+            <ol id="instructions-list" class="hidden"></ol>
+        </div>
+    </main>
+    <footer>
+        &copy; Recipe App
+      </footer>
+</body>
+
+</html>
